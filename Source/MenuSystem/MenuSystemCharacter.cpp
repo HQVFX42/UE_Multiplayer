@@ -101,6 +101,7 @@ void AMenuSystemCharacter::CreateGameSession()
 	SessionSettings->bUseLobbiesIfAvailable = true;
 	SessionSettings->NumPublicConnections = 4;
 	SessionSettings->Set(FName("MatchType"), FString("FreeForAll"), EOnlineDataAdvertisementType::ViaOnlineServiceAndPing);
+
 	const ULocalPlayer* LocalPlayer = GetWorld()->GetFirstLocalPlayerFromController();
 	OnlineSessionInterface->CreateSession(*LocalPlayer->GetPreferredUniqueNetId(), NAME_GameSession, *SessionSettings);
 }
