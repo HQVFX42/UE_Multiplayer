@@ -114,9 +114,9 @@ void UMenu::OnCreateSession(bool bWasSuccessful)
 		{
 			GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Red, TEXT(__FUNCTION__));
 		}
-	}
 
-	HostButton->SetIsEnabled(true);
+		HostButton->SetIsEnabled(true);
+	}
 }
 
 void UMenu::OnFindSessions(const TArray<FOnlineSessionSearchResult>& SessionResults, bool bWasSuccessful)
