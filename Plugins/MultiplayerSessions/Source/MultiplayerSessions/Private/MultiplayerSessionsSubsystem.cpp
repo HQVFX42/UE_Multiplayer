@@ -23,6 +23,7 @@ UMultiplayerSessionsSubsystem::UMultiplayerSessionsSubsystem() :
 
 void UMultiplayerSessionsSubsystem::CreateSession(int32 NumbPublicConnections, FString MatchType)
 {
+	UE_LOG(LogTemp, Warning, TEXT(__FUNCTION__));
 	if (!SessionInterface.IsValid())
 	{
 		return;
@@ -106,6 +107,7 @@ void UMultiplayerSessionsSubsystem::JoinSession(const FOnlineSessionSearchResult
 
 void UMultiplayerSessionsSubsystem::DestroySession()
 {
+	UE_LOG(LogTemp, Warning, TEXT(__FUNCTION__));
 	if (!SessionInterface.IsValid())
 	{
 		MultiplayerOnDestroySessionComplete.Broadcast(false);
