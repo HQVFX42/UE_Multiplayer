@@ -6,23 +6,20 @@
   <img src="./Images/Image_01.png" width="100%"/>
 	- [MultiplayerSessionsSubsystem.h](./Plugins/MultiplayerSessions/Source/MultiplayerSessions/Public/MultiplayerSessionsSubsystem.h)
 	- [MultiplayerSessionsSubsystem.cpp](./Plugins/MultiplayerSessions/Source/MultiplayerSessions/Private/MultiplayerSessionsSubsystem.cpp)
-- Accessing the online subsystem
+- Accessing the online subsystem   
   	```cpp
-	public:
-		// Pointer to the online session interface
-		IOnlineSessionPtr OnlineSessionInterface;
-   	```
-   
-  	```cpp
-  	IOnlineSubsystem* OnlineSubsystem = IOnlineSubsystem::Get();
-	if (OnlineSubsystem)
+	UMultiplayerSessionsSubsystem::UMultiplayerSessionsSubsystem() :
+		CreateSessionCompleteDelegate(FOnCreateSessionCompleteDelegate::CreateUObject(this, &ThisClass::OnCreateSessionComplete)),
+		FindSessionsCompleteDelegate(FOnFindSessionsCompleteDelegate::CreateUObject(this, &ThisClass::OnFindSessionsComplete)),
+		JoinSessionCompleteDelegate(FOnJoinSessionCompleteDelegate::CreateUObject(this, &ThisClass::OnJoinSessionComplete)),
+		DestroySessionCompleteDelegate(FOnDestroySessionCompleteDelegate::CreateUObject(this, &ThisClass::OnDestroySessionComplete)),
+		StartSessionCompleteDelegate(FOnStartSessionCompleteDelegate::CreateUObject(this, &ThisClass::OnStartSessionComplete))
 	{
-		OnlineSessionInterface = OnlineSubsystem->GetSessionInterface();
-
-		/*if (GEngine)
+		IOnlineSubsystem* Subsystem = IOnlineSubsystem::Get();
+		if (Subsystem)
 		{
-			GEngine->AddOnScreenDebugMessage(INDEX_NONE, 15.0f, FColor::Blue, FString::Printf(TEXT("Found subsystem %s"), *OnlineSubsystem->GetSubsystemName().ToString()));
-		}*/
+			SessionInterface = Subsystem->GetSessionInterface();
+		}
 	}
   	```
   
