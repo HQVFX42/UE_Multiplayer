@@ -4,7 +4,7 @@
 ## Online SubSystem
 - Accessing the online subsystem
   ```cpp
-  IOnlineSubsystem* OnlineSubsystem = IOnlineSubsystem::Get();
+  	IOnlineSubsystem* OnlineSubsystem = IOnlineSubsystem::Get();
 	if (OnlineSubsystem)
 	{
 		OnlineSessionInterface = OnlineSubsystem->GetSessionInterface();
