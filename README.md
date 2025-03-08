@@ -5,9 +5,9 @@
 - Accessing the online subsystem
   	```cpp
    	/** header */
-      	public:
-	// Pointer to the online session interface
-	IOnlineSessionPtr OnlineSessionInterface;
+	public:
+		// Pointer to the online session interface
+		IOnlineSessionPtr OnlineSessionInterface;
    	```
    
   	```cpp
