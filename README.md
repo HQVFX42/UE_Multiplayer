@@ -4,6 +4,11 @@
 ## Online SubSystem
 - Accessing the online subsystem
   	```cpp
+   	public:
+	// Pointer to the online session interface
+	IOnlineSessionPtr OnlineSessionInterface;
+   	```
+  	```cpp
   	IOnlineSubsystem* OnlineSubsystem = IOnlineSubsystem::Get();
 	if (OnlineSubsystem)
 	{
