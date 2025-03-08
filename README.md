@@ -1,5 +1,5 @@
 # UE_Multiplayer
-- steam online subsystem plugin
+- Online subsystem plugin with menu widget
   <img src="./Images/Image_01.png" width="100%"/>
 
 ## Online SubSystem
@@ -78,3 +78,8 @@
 	FMultiplayerOnDestroySessionComplete MultiplayerOnDestroySessionComplete;
 	FMultiplayerOnStartSessionComplete MultiplayerOnStartSessionComplete;
   	```
+  
+## Menu
+- Create widget for access online subsystem
+	- [Menu.h](./Plugins/MultiplayerSessions/Source/MultiplayerSessions/Public/Menu.h)
+ 	- [Menu.cpp](./Plugins/MultiplayerSessions/Source/MultiplayerSessions/Private/Menu.cpp)
