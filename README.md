@@ -6,7 +6,7 @@
 - Create online subsystem child
 	- [MultiplayerSessionsSubsystem.h](./Plugins/MultiplayerSessions/Source/MultiplayerSessions/Public/MultiplayerSessionsSubsystem.h)
 	- [MultiplayerSessionsSubsystem.cpp](./Plugins/MultiplayerSessions/Source/MultiplayerSessions/Private/MultiplayerSessionsSubsystem.cpp)
-- Session interface Functions & Delegates & Callbacks   
+- Session interface Functions & Delegates & Callbacks & Delegate Handles
 	```cpp
 	 public:
 		UMultiplayerSessionsSubsystem();
@@ -57,12 +57,24 @@
 		FOnStartSessionCompleteDelegate StartSessionCompleteDelegate;
 		FDelegateHandle StartSessionCompleteDelegateHandle;
   	```
- 
-  
-## Join session
-
-## Find sessions
-
-## Create session
-
-## Gamemode
+- Own custom delegates & bind callbacks
+	```cpp
+	//
+	// Declaring own custom delgates for the Menu class to bind callbacks to
+	//
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMultiplayerOnCreateSessionComplete, bool, bWasSuccessful);
+	DECLARE_MULTICAST_DELEGATE_TwoParams(FMultiplayerOnFindSessionsComplete, const TArray<FOnlineSessionSearchResult>& SessionResults, bool bWasSuccessful);
+	DECLARE_MULTICAST_DELEGATE_OneParam(FMultiplayerOnJoinSessionComplete, EOnJoinSessionCompleteResult::Type Result);
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMultiplayerOnDestroySessionComplete, bool, bWasSuccessful);
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMultiplayerOnStartSessionComplete, bool, bWasSuccessful);
+ 	```
+ 	```cpp
+  	//
+	// Own custom delgates for the Menu class to bind callbacks to
+	//
+	FMultiplayerOnCreateSessionComplete MultiplayerOnCreateSessionComplete;
+	FMultiplayerOnFindSessionsComplete MultiplayerOnFindSessionsComplete;
+	FMultiplayerOnJoinSessionComplete MultiplayerOnJoinSessionComplete;
+	FMultiplayerOnDestroySessionComplete MultiplayerOnDestroySessionComplete;
+	FMultiplayerOnStartSessionComplete MultiplayerOnStartSessionComplete;
+  	```
