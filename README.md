@@ -6,7 +6,7 @@
 - Create online subsystem child
 	- [MultiplayerSessionsSubsystem.h](./Plugins/MultiplayerSessions/Source/MultiplayerSessions/Public/MultiplayerSessionsSubsystem.h)
 	- [MultiplayerSessionsSubsystem.cpp](./Plugins/MultiplayerSessions/Source/MultiplayerSessions/Private/MultiplayerSessionsSubsystem.cpp)
-- Session interface delegates   
+- Session interface Functions & Delegates & Callbacks   
 	```cpp
 	 public:
 		UMultiplayerSessionsSubsystem();
@@ -20,6 +20,18 @@
 		void DestroySession();
 		void StartSession();
  	```
+ 	```cpp
+	  protected:	
+		//
+		// Internal callbacks for the delegates we'll add to the Online Session Interafce delegate list.
+		// These don't need to called outside this class.
+		//
+		void OnCreateSessionComplete(FName SessionName, bool bWasSuccessful);
+		void OnFindSessionsComplete(bool bWasSuccessful);
+		void OnJoinSessionComplete(FName SessionName, EOnJoinSessionCompleteResult::Type Result);
+		void OnDestroySessionComplete(FName SessionName, bool bWasSuccessful);
+		void OnStartSessionComplete(FName SessionName, bool bWasSuccessful);
+  	```
  	```cpp
 	  private:
 		IOnlineSessionPtr SessionInterface;
