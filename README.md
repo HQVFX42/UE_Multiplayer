@@ -1,8 +1,11 @@
 # UE_Multiplayer
 - steam online subsystem plugin
-  <img src="./Images/Image_01.png" width="100%"/>
 
 ## Online SubSystem
+- Create online subsystem child
+  <img src="./Images/Image_01.png" width="100%"/>
+	- [MultiplayerSessionsSubsystem.h]("./Plugins/MultiplayerSessions/Source/MultiplayerSessions/Public/MultiplayerSessionsSubsystem.h")
+	- [MultiplayerSessionsSubsystem.cpp]("./Plugins/MultiplayerSessions/Source/MultiplayerSessions/Private/MultiplayerSessionsSubsystem.cpp")
 - Accessing the online subsystem
   	```cpp
 	public:
@@ -22,7 +25,7 @@
 		}*/
 	}
   	```
-
+  
 ## Join session
 
 ## Find sessions
