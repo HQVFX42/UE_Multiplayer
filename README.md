@@ -4,7 +4,7 @@
 
 ---
 ## Setup
-![image.png](./Images/preface.png)
+![image.png](./Images/Preface.png)
 
 ## Online SubSystem
 - Create online subsystem child
