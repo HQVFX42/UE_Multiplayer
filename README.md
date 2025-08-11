@@ -1,8 +1,7 @@
 # UE_Multiplayer
 - Online subsystem plugin with menu widget
   <img src="./Images/Image_01.png" width="100%"/>
-
----
+  
 ## Setup
 ![image.png](./Images/Preface.png)
 
